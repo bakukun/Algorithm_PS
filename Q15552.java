@@ -11,7 +11,7 @@ public class Q15552 {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int cnt = Integer.parseInt(bf.readLine());
         for (int i = 0; i < cnt; i++) {
-            StringTokenizer st = new StringTokenizer(bf.readLine(),",");
+            StringTokenizer st = new StringTokenizer(bf.readLine());
             bw.write((Integer.parseInt(st.nextToken()) + (Integer.parseInt(st.nextToken()))+ "\n"));
         }
         bw.flush();
