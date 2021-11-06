@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.StringTokenizer;
 
-class Main {
+public class Q1002 {
     public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
