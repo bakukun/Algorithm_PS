@@ -35,7 +35,6 @@ public class Q11723 {
 						bw.write("0");
 					}
 					bw.newLine();
-					bw.flush();
 				} else if (str.equals("toggle")) {
 					if (hs.contains(a)) {
 						hs.remove(a);
@@ -45,6 +44,7 @@ public class Q11723 {
 				}
 			}
 		}
+		bw.flush();
 		bw.close();
 	}
 }
