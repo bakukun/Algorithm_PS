@@ -10,14 +10,20 @@ public class Q1011 {
 			StringTokenizer st = new StringTokenizer(bf.readLine());
 			long x = Integer.parseInt(st.nextToken());
 			long y = Integer.parseInt(st.nextToken());
-			long k = 0;
 			long cnt = 0;
-			while(y-x>1){
-				k++;
-				x+=k;
-				cnt++;
+			long mul = 1;
+			long k = y - x;
+			while(k>cnt+2*mul){
+				cnt += 2*mul;
+				mul++;
 			}
-			bw.write(Long.toString(cnt+1));
+			if(cnt+mul>=k){
+				mul = 2*mul-1;
+			}
+			else{
+				mul *=2;
+			}
+			bw.write(Long.toString(mul));
 			bw.newLine();
 		}
 		bw.flush();
