@@ -1,8 +1,13 @@
 def solution(s):
-    a, b = 0, 0
-    while s != '1':
-        a += 1
-        num = s.count('1')
-        b += len(s) - num
-        s = format(num,'b')
-    return [a, b]
+    n = 120
+    #10진수 -> n진수
+    b = format(n,'b') #2진수
+    o = format(n,'o') #8진수
+    x = format(n,'x') #16진수
+    print(b,o,x)
+    #n진수 -> 10진수
+    b = int(b, 2)
+    o = int(o, 8)
+    x = int(x, 16)
+    print(b,o,x)
+    return 
