@@ -2,34 +2,18 @@ from collections import deque
 
 def solution(priorities, location):
     
-    maximum = max(priorities)
-    q = deque(list(priorities))
+    q = deque([(v, i) for i, v in enumerate(priorities)])
     cnt = 0
 
-
-    while(len(q) > 0):
-        tmp = q.popleft()
+    while q:
+        cur = q.popleft()
+        if any(cur[0] < other[0] for other in q):
+            q.append(cur)
         
-        if(location == 0):
-            if (tmp >= maximum):
-                cnt += 1
+        else:
+            cnt += 1
+            if(cur[1] == location):
                 return cnt
             
-            else:
-                q.append(tmp)
-                location = len(q) - 1
+            
         
-        else:    
-            location = max(0,location - 1)
-        
-            if (tmp < maximum):
-                q.append(tmp)
-        
-            else:
-                cnt += 1
-                tmp_max = max(q)
-                maximum = min(maximum,tmp_max)
-
-    
-    answer = 0
-    return answer
