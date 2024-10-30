@@ -9,22 +9,20 @@ def solution(n):
     num = 1
     dirs = [[1,0],[0,1],[-1,-1]]
     cnt = 0
-    x , y = 0 , 0
+    x , y = -1 , 0
     
-    for i in range(len(arr),0,-1):
-        for _ in range(i):
+    for i in range(n):
+        for j in range(i,n): 
+            if (cnt % 3 == 0):
+                x = x + 1
+            elif (cnt % 3 == 1):
+                y = y + 1
+            else:
+                x -= 1
+                y -= 1
             arr[x][y] = num
             num += 1
-            if ( _ < i - 1): # 4일때, 0~3까지 , 3일때 0~2까지 인데
-                dx , dy = dirs[cnt%3]
-                x += dx
-                y += dy
-        
         cnt += 1
-        dx , dy = dirs[cnt%3]
-        x , y = x+dx , y+dy
-    
-    
 
     arr = sum(arr,[])
     return arr
