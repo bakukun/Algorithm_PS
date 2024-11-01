@@ -19,4 +19,5 @@ def solution(sequence, k):
             break
     
     answer.sort(key=lambda x: (x[1] - x[0], x[0]))
+
     return answer[0]
